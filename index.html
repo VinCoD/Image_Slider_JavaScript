@@ -31,8 +31,24 @@
        <div id="arrow-right" class="arrow"></div>
    </div>
    <script>
-       let sliderImages = document.querySelectorAll('slide');
-       
+       let sliderImages = document.querySelectorAll('.slide');
+        arrowRight=document.querySelector('#arrow-right');
+        arrowLeft=document.querySelector('#arrow-left');
+        current = 0;
+
+        // clear all images
+        function reset(){
+            for(let i=0; i<sliderImages.length; i++){
+                sliderImages[i].style.display = 'none';
+
+            }
+        }
+
+        function startSlide(){
+            reset();
+        }
+        startSlide();
+
    </script>
 </body>
 </html>
