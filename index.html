@@ -46,7 +46,43 @@
 
         function startSlide(){
             reset();
+            sliderImages[0].style.display = 'block';
+
         }
+
+        // Show previous
+        function slideLeft(){
+            reset();
+            sliderImages[current-1].style.display= 'block';
+            current--;
+        }
+
+        // left arrow click
+        arrowLeft.addEventListener('click', () => {
+            if (current===0){
+                current = sliderImages.length;
+                
+            }
+            slideLeft();
+        })
+        // show next
+
+        function slideRight(){
+            if (current===0){
+                reset();
+                sliderImages[current + 1].style.display = 'block';
+                current ++;
+            }
+        }
+        // right arrow click
+
+        arrowRight.addEventListener('click', () => {
+            if (current===sliderImages.length - 1){
+                current = -1;
+                
+            }
+            slideRight();
+        })
         startSlide();
 
    </script>
